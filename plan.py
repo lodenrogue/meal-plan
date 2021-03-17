@@ -56,10 +56,6 @@ def display(lunch, dinner, snack):
 	dinner_table = create_table('Dinner', dinner)
 	snack_table = create_table('Snacks', snack)
 
-	lunch_total_cals = get_total_calories(lunch)
-	dinner_total_cals = get_total_calories(dinner)
-	snack_total_cals = get_total_calories(snack)
-
 	console = Console()
 	console.print(lunch_table)
 	console.print(dinner_table)

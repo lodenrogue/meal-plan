@@ -9,6 +9,8 @@ COPY ./run.sh /app/run.sh
 
 WORKDIR /app
 
+RUN chmod +x run.sh
+
 ENV TERM=xterm-256color
 
 RUN pip install --no-cache-dir -r requirements.txt
