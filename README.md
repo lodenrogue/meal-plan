@@ -13,6 +13,8 @@ Available meal types:
 - chicken
 - fish-chicken
 
+---
+
 Build with Docker:
 
 ```sh
