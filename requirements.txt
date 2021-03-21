@@ -1,1 +1,2 @@
 rich==9.11.1
+prettytable==2.1.0
