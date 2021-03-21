@@ -6,7 +6,7 @@ class HtmlTable():
         self.menu = menu
 
     
-    def create_table(self):
+    def create_table(self, table_name):
         table = PrettyTable()
         table.field_names = ["Name", "Quantity", "Units", "Calories"]
         
@@ -23,4 +23,12 @@ class HtmlTable():
 
             table.add_row([name, quantity, units, calories])
 
-        return table.get_html_string()
+        break_line = '<br/>'
+        title = '<b>{}</b>'.format(table_name)
+        html = table.get_html_string()
+
+        result = f'{title}\n'
+        result += f'{break_line}\n'
+        result += f'{html}\n'
+        result += f'{break_line}{break_line}'
+        return result

@@ -19,31 +19,21 @@ def run(calories, menu_type, is_html):
 		display_html_table(lunch, dinner, snack)
 	else:
 		display_rich_table(lunch, dinner, snack)
-		
+
 
 def display_html_table(lunch, dinner, snack):
-	lunch_table = HtmlTable(lunch).create_table()
-	dinner_table = HtmlTable(dinner).create_table()
-	snack_table = HtmlTable(snack).create_table()
+	lunch_table = HtmlTable(lunch).create_table('Lunch')
+	dinner_table = HtmlTable(dinner).create_table('Dinner')
+	snack_table = HtmlTable(snack).create_table('Snacks')
 
-	print("<b>Lunch</b>")
-	print("<br/>")
 	print(lunch_table)
-	print("<br/><br/>")
-
-	print("<b>Dinner</b>")
-	print("<br/>")
 	print(dinner_table)
-	print("<br/><br/>")
-
-
-	print("<b>Snacks</b>")
-	print("<br/>")
 	print(snack_table)
-	print("<br/><br/>")
 
 
 def display_rich_table(lunch, dinner, snack):
+	# lunch_table = RichTable(lunch).create_table()
+
 	lunch_table = create_table('Lunch', lunch)
 	dinner_table = create_table('Dinner', dinner)
 	snack_table = create_table('Snacks', snack)
