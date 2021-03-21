@@ -3,9 +3,10 @@ import math
 import argparse
 
 from rich.console import Console
-from rich.table import Table
 
 from table.html_table import HtmlTable
+from table.rich_table import RichTable
+
 from menu import Menu
 
 
@@ -32,35 +33,14 @@ def display_html_table(lunch, dinner, snack):
 
 
 def display_rich_table(lunch, dinner, snack):
-	# lunch_table = RichTable(lunch).create_table()
-
-	lunch_table = create_table('Lunch', lunch)
-	dinner_table = create_table('Dinner', dinner)
-	snack_table = create_table('Snacks', snack)
+	lunch_table = RichTable(lunch).create_table('Lunch')
+	dinner_table = RichTable(dinner).create_table('Dinner')
+	snack_table = RichTable(snack).create_table('Snacks')
 
 	console = Console()
 	console.print(lunch_table)
 	console.print(dinner_table)
 	console.print(snack_table)
-
-
-def create_table(name, meal):
-	table = Table(title=name, show_lines=True)
-
-	table.add_column('Name', style='cyan', no_wrap=True, width=17)
-	table.add_column('Quantity', justify='right', no_wrap=True, width=10)
-	table.add_column('Units', justify='right', no_wrap=True, width=10)
-	table.add_column('Calories', justify='right', style='green', no_wrap=True, width=10)
-
-	for item in meal:
-		name = item['name']
-		quantity = '{:.2f}'.format(item['quantity'])
-		units = item['unit_type']
-		calories = str(item['calories'])
-
-		table.add_row(name, quantity, units, calories)
-
-	return table
 
 
 def get_args():
