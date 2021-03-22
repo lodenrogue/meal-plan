@@ -1,13 +1,6 @@
 import math
 from menu.lunch_menu import LunchMenu
-
-BANANA_CALORIES = 121
-BANANA_QUANTITY = 1
-BANANA_UNIT_TYPE = 'Each'
-
-ORANGE_CALORIES = 61.5
-ORANGE_QUANTITY = 2
-ORANGE_UNIT_TYPE = 'Each'
+from menu.snack_menu import SnackMenu
 
 BEANS_CONCHITA_CALORIES = 0.78
 BEANS_CONCHITA_QUANTITY = 200
@@ -39,6 +32,7 @@ class Menu():
 		self.menu_type = menu_type
 
 		self.lunch_menu = LunchMenu()
+		self.snack_menu = SnackMenu()
 
 
 	def get_lunch(self):
@@ -72,7 +66,7 @@ class Menu():
 
 
 	def get_snack(self):
-		return [self._create_banana(), self._create_orange()]
+		return self.snack_menu.get_menu()
 
 
 	def _create_fish_chicken_menu(self, available_calories):
@@ -143,24 +137,6 @@ class Menu():
 
 	def _get_total_calories(self, meal):
 		return sum(item['calories'] for item in meal)
-
-
-	def _create_orange(self):
-		orange_name = 'Orange'
-		orange_quantity = 2
-		orange_unit_type = ORANGE_UNIT_TYPE
-		orange_calories = math.ceil(ORANGE_CALORIES * orange_quantity)
-
-		return self._create_item(orange_name, orange_quantity, orange_unit_type, orange_calories)
-
-
-	def _create_banana(self):
-		banana_name = 'Banana'
-		banana_quantity = BANANA_QUANTITY
-		banana_unit_type = BANANA_UNIT_TYPE
-		banana_calories = math.ceil(BANANA_CALORIES * BANANA_QUANTITY)
-
-		return self._create_item(banana_name, banana_quantity, banana_unit_type, banana_calories)
 
 
 	def _create_item(self, name, quantity, unit_type, calories):

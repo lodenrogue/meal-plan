@@ -1,10 +1,9 @@
 import math
+from menu.item_creator import ItemCreator
 
 PIZZA_CALORIES_PER_PIE = 1550
 PIZZA_QUANTITY = 0.333333
 PIZZA_UNIT_TYPE = 'Containers'
-
-from menu.item_creator import ItemCreator
 
 class LunchMenu():
 
