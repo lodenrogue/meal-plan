@@ -7,7 +7,7 @@ from rich.console import Console
 from table.html_table import HtmlTable
 from table.rich_table import RichTable
 
-from menu import Menu
+from menu.menu import Menu
 
 
 def run(calories, menu_type, is_html):

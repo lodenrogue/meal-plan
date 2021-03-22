@@ -1,8 +1,5 @@
 import math
-
-PIZZA_CALORIES_PER_PIE = 1550
-PIZZA_QUANTITY = 0.333333
-PIZZA_UNIT_TYPE = 'Containers'
+from menu.lunch_menu import LunchMenu
 
 BANANA_CALORIES = 121
 BANANA_QUANTITY = 1
@@ -41,14 +38,11 @@ class Menu():
 		self.calories = int(calories)
 		self.menu_type = menu_type
 
+		self.lunch_menu = LunchMenu()
+
 
 	def get_lunch(self):
-		name = 'Pizza'
-		quantity = PIZZA_QUANTITY
-		unit_type = PIZZA_UNIT_TYPE
-		calories = math.ceil(PIZZA_CALORIES_PER_PIE * PIZZA_QUANTITY)
-
-		return [self._create_item(name, quantity, unit_type, calories)]
+		return self.lunch_menu.get_menu()
 
 
 	def get_dinner(self):
