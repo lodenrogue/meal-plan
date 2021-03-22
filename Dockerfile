@@ -6,6 +6,8 @@ COPY ./*.py /app/
 
 COPY ./table/*.py /app/table/
 
+COPY ./menu/*.py /app/menu/
+
 WORKDIR /app
 
 ENV TERM=xterm-256color
