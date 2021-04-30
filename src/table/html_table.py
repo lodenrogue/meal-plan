@@ -1,15 +1,16 @@
 from prettytable import PrettyTable
 
+
 class HtmlTable():
 
     def __init__(self, menu):
         self.menu = menu
 
-    
+
     def create_table(self, table_name):
         table = PrettyTable()
         table.field_names = ["Name", "Quantity", "Units", "Calories"]
-        
+
         table.align["Name"] = "l"
         table.align["Quantity"] = "r"
         table.align["Units"] = "r"

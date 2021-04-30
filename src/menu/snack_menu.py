@@ -9,6 +9,7 @@ ORANGE_CALORIES = 61.5
 ORANGE_QUANTITY = 2
 ORANGE_UNIT_TYPE = 'Each'
 
+
 class SnackMenu():
 
     def get_menu(self):

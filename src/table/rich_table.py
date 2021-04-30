@@ -1,5 +1,6 @@
 from rich.table import Table
 
+
 class RichTable():
 
     def __init__(self, menu):

@@ -12,6 +12,6 @@ class ItemCreator():
         return {
             'name': self.name,
             'quantity': self.quantity,
-            'unit_type':self.unit_type, 
+            'unit_type': self.unit_type,
             'calories': self.calories
         }
